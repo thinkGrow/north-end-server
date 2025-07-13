@@ -28,9 +28,9 @@ async function run() {
     const coffeesCollection = client.db("coffeeDB").collection("coffees");
 
     app.get("/coffees", async (req, res) => {
-      // const cursor = coffeesCollection.find();
-      // const result = await cursor.toArray();
-      const result = await coffeesCollection.find().toArray();
+      const cursor = coffeesCollection.find();
+      const result = await cursor.toArray();
+      // const result = await coffeesCollection.find().toArray();
       res.send(result);
     });
 
